@@ -29,10 +29,10 @@
 		let text = load(t);
 		if(document.getElementById("pwd").value=="")
 		{alert("请输入密码");return;}
-		if(text=="")alert("error");
-		else if(text==document.getElementById("pwd").value)
-		location = "/?login=true"
-		else alert("Your password:"+document.getElementById("pwd").value+"\nRight:"+text);
+		if(text=="") alert("error");
+		else{if(text==document.getElementById("pwd").value)
+		{location = "/?login=true";}
+		else alert("Your password:"+document.getElementById("pwd").value+"\nRight:"+text);}
 }
     </script>
 </head>
