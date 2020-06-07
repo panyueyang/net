@@ -26,11 +26,12 @@
 		 {
 		let user = document.getElementById("user-lookfor").value;
                 var t="/user/"+user+"/password.txt";
-		let text = load(t)+"\n";
-		if(document.getElementById("pwd").value=="")
+		let text = load(t);
+		let pwd=document.getElementById("pwd").value+"\n";
+		if(pwd=="")
 		{alert("请输入密码");return;}
 		if(text=="") alert("error");
-		else{if(text==document.getElementById("pwd").value)
+		else{if(text==pwd)
 		{location = "/?login=true";}
 		else alert("密码错误!!!!!");}
 }
