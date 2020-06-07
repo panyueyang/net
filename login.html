@@ -26,13 +26,13 @@
 		 {
 		let user = document.getElementById("user-lookfor").value;
                 var t="/user/"+user+"/password.txt";
-		let text = load(t);
+		let text = load(t)+"\n";
 		if(document.getElementById("pwd").value=="")
 		{alert("请输入密码");return;}
 		if(text=="") alert("error");
 		else{if(text==document.getElementById("pwd").value)
 		{location = "/?login=true";}
-		else alert("Your password:"+document.getElementById("pwd").value+"\nRight:"+text);}
+		else alert("密码错误!!!!!");}
 }
     </script>
 </head>
