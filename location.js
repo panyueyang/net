@@ -1,6 +1,6 @@
 function locat(file_link)
 {
-  if(getQueryString("login")=="true")
+  if(getQueryString("login"))
   location = file_link+"?login=true";
      else location = file_link;
 }
