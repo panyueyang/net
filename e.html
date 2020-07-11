@@ -20,5 +20,6 @@ function getQueryString(name) {
     }
   if(getQueryString("login")=="true")
   { document.getElementById("a").innerHTML=(load("exam//"+getQueryString("exam")+"//name.txt"));document.title = '已登录';;}
+	else console.error("Error: %s(%s,%s)", "Login false",getQueryString("login"),"true")
 </script>
 <h1 id="a">请登录查看题目</h1>
