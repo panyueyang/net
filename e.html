@@ -19,6 +19,6 @@ function getQueryString(name) {
         if (r != null) return unescape(r[2]); return null;
     }
   if(getQueryString("login")=="true")
-  { document.getElementById("a").innerHTML=(load("exam//"+getQueryString("exam")+"//name.txt"));document.title = document.title = 'xxxxxx';;}
+  { document.getElementById("a").innerHTML=(load("exam//"+getQueryString("exam")+"//name.txt"));document.title = '已登录';;}
 </script>
 <h1 id="a">请登录查看题目</h1>
