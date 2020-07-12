@@ -1,6 +1,16 @@
 <h1 id="a">请登录查看题目</h1>
 <input id="ans">
+<button onclick="tick()">提交</button>
+<img id="img">
 <script>
+function right()
+	{
+	document.getElementById("img").src="yes.jpg"	
+	}
+function wrong()
+	{
+	document.getElementById("img").src="no.JPG"	
+	}
   function load(name) {
 		    let xhr = new XMLHttpRequest(),
 		        okStatus = document.location.protocol === "file:" ? 0 : 200;
@@ -25,4 +35,10 @@ function getQueryString(name) {
    document.title = '已登录';
    console.info("OK!");}
 	else console.error("Error: %s(%s,%s)", "Login false",getQueryString("login"),"true")
+function tick()
+	{
+		if(document.getElementById("ans").value==load("exam//"+getQueryString("exam")+"//ans.txt"))
+			right()
+		else wrong()
+	}
 </script>
