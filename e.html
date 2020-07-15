@@ -37,7 +37,7 @@ function getQueryString(name) {
 	else console.error("Error: %s(%s,%s)", "Login false",getQueryString("login"),"true")
 function tick()
 	{
-		if(document.getElementById("ans").value==load("exam//"+getQueryString("exam")+"//ans.txt"))
+		if(document.getElementById("ans").value==load("exam/"+getQueryString("exam")+"/ans.txt"))
 			right()
 		else wrong()
 	}
