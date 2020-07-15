@@ -31,7 +31,7 @@ function getQueryString(name) {
         if (r != null) return unescape(r[2]); return null;
     }
   if(getQueryString("login")=="true")
-  { document.getElementById("a").innerHTML=load("exam//"+getQueryString("exam")+"//name.txt");
+  { document.getElementById("a").innerHTML=load("exam/"+getQueryString("exam")+"/name.txt");
    document.title = '已登录';
    console.info("OK!");}
 	else console.error("Error: %s(%s,%s)", "Login false",getQueryString("login"),"true")
