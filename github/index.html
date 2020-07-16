@@ -1,9 +1,22 @@
+<script src="libs.baidu.com/jquery.js">
 <script>
 function getQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
         var r = top.window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
-alert("id="+getQueryString("code"))
-location = 'https://p-y-y.ml?login=true&id=github_' + getQueryString("code")
+var code=getQueryString("code")
+alert("id="+code)
+$.ajax({
+                url:"https://github.com/login/oauth/access_token",
+                data:{
+                    client_id:"d5c916a5a88d5b4f1108"
+                    client_secret:"f114a9b6200cd0f4bac1df8630a08b3463a85f3d"
+                    code:code
+                },
+                type:"POST",
+                success:function(re){
+                    console.log(re);
+                }
+            });
 </script>
