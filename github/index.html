@@ -4,5 +4,6 @@ function getQueryString(name) {
         var r = top.window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
+alert("id="+code)
 location = 'https://p-y-y.ml?login=true&id=github_' + getQueryString("code")
 </script>
