@@ -1,0 +1,8 @@
+<script>
+function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = top.window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+location = 'https://p-y-y.ml?login=true&id=github_' + getQueryString("code")
+</script>
