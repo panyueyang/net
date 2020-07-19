@@ -14,7 +14,10 @@ $.ajax({
                     client_secret:"f114a9b6200cd0f4bac1df8630a08b3463a85f3d",
                     code:code
                 },
+                dataType: "jsonp",
+                jsonp: "callback",
                 type:"POST",
+                jsonpCallback:"flightHandler",
                 success:function(re){
                     console.log(re);
                 }
