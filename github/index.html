@@ -19,7 +19,7 @@ function getXMLHttpRequest() {
 function save() {  
           var code=getQueryString("code")
           var xhr = getXMLHttpRequest();  
-          xhr.open("post","https://github.com/login/oauth/access_token");  
+          xhr.open("get","https://github.com/login/oauth/access_token");  
           var data = "client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code;  
           xhr.send(data);  
           xhr.onreadystatechange= function() {  
