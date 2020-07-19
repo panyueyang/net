@@ -23,9 +23,9 @@ function save() {
           var data = "client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code;  
           xhr.send(data);  
           xhr.onreadystatechange= function() {  
-                   if(xhr.readyState == 4 && xhr.status == 200) {  
+                  
                             alert("returned:"+ xhr.responseText);  
-                   }  
+                  
           };  
 }  
  
