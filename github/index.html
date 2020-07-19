@@ -5,28 +5,6 @@ function getQueryString(name) {
         var r = top.window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
-function getXMLHttpRequest() {  
-          var xhr;  
-          if(window.ActiveXObject) {  
-                   xhr= new ActiveXObject("Microsoft.XMLHTTP");  
-          }else if (window.XMLHttpRequest) {  
-                   xhr= new XMLHttpRequest();  
-          }else {  
-                   xhr= null;  
-          }  
-          return xhr;  
-}  
-function save() {  
-          var code=getQueryString("code")
-          var xhr = getXMLHttpRequest();  
-          xhr.open("get","https://github.com/login/oauth/access_token");  
-          var data = "client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&redirect_uri=http://p-y-y.ml/github/c.html&code="+code;  
-          xhr.send(data);  
-          xhr.onreadystatechange= function() {  
-                  
-                            alert("returned:"+ xhr.responseText);  
-                  
-          };  
-}  
- 
+ var code=getQueryString("code")
+ location="https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&redirect_uri=http://p-y-y.ml/github/c.html&code="+code
 </script>
