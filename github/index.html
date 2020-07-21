@@ -7,7 +7,7 @@ function getQueryString(name) {
     }
 function a()
 	{
-	location="https://github.com:443/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&callback=666&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code:"+code	
+	location="https://github.com:443/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&callback=666&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code	
 	}
 /* function load(name) {
 		    let xhr = new XMLHttpRequest(),
@@ -35,6 +35,6 @@ var a=load("https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b
     function onBack(res) {
         alert(JSON.stringify(res));
     }*/var code=getQueryString("code")
-alert($.ajax({url:"https://github.com:443/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&callback=666&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code:"+code,dataType:"jsonp",contentType:"application/x-www-form-urlencoded"}));
+alert($.ajax({url:"https://github.com:443/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&callback=666&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code,dataType:"jsonp",contentType:"application/x-www-form-urlencoded"}));
 </script>
 <a onclick="a()">666</a>
