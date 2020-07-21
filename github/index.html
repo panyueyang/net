@@ -6,7 +6,7 @@ function getQueryString(name) {
         var r = top.window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
- function load(name) {
+/* function load(name) {
 		    let xhr = new XMLHttpRequest(),
 		        okStatus = document.location.protocol === "file:" ? 0 : 200;
 		    xhr.open('GET', name, false);
@@ -20,7 +20,7 @@ function getQueryString(name) {
 		finally{
 		return xhr.status === okStatus ? xhr.responseText : null;}
 }
-/* var code=getQueryString("code")
+ var code=getQueryString("code")
 var a=load("https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code+"&redirect_uri=http://p-y-y.ml/github/c.html")*/
 var script = document.createElement('script');
     script.type = 'text/javascript';
