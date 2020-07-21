@@ -22,14 +22,15 @@ function getQueryString(name) {
 }
  
 var a=load("https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code+"&redirect_uri=http://p-y-y.ml/github/c.html")*/
-var script = document.createElement('script');
+/*var script = document.createElement('script');
     script.type = 'text/javascript';
-var code=getQueryString("code")
+
     // 传参并指定回调执行函数为onBack
     script.src = "https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&callback=onBack&code="+code+"&redirect_uri=http://p-y-y.ml/github/c.html";
     document.head.appendChild(script);
     // 回调执行函数
     function onBack(res) {
         alert(JSON.stringify(res));
-    }
+    }*/var code=getQueryString("code")
+alert($.ajax({url:"https://github.com:443/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&callback=666&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code:"+code,dataType:"jsonp",contentType:"application/x-www-form-urlencoded"}));
 </script>
