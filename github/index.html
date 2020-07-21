@@ -5,6 +5,20 @@ function getQueryString(name) {
         var r = top.window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
+ function load(name) {
+		    let xhr = new XMLHttpRequest(),
+		        okStatus = document.location.protocol === "file:" ? 0 : 200;
+		    xhr.open('GET', name, false);
+		    xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
+			try{
+				xhr.send(null);
+			}catch(err){
+				alert(err);
+				return null;
+			}
+		finally{
+		return xhr.status === okStatus ? xhr.responseText : null;}
+}
  var code=getQueryString("code")
-location="https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&redirect_uri=http://p-y-y.ml/github/c.html&code="+code
+var a=load("https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&redirect_uri=http://p-y-y.ml/github/c.html&code="+code)
 </script>
