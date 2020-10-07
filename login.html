@@ -13,10 +13,11 @@
 		 { $.ajax({
    		 url: "http://tinywebdb.appinventor.space:80/api?user=yueyang&secret=945d027a&action=get&tag="+document.getElementById("user-lookfor").value,
   		 type: 'post',
-   		 dataType: 'json',  // 请求方式为jsonp
+   		 dataType: 'jsonp',  // 请求方式为jsonp
    		 crossDomain: true,
 	 	success: function(data) {alert(data);}
 });
+		  $.post("http://tinywebdb.appinventor.space:80/api?user=yueyang&secret=945d027a&action=get&tag="+document.getElementById("user-lookfor").value)
 }
     </script>
 </head>
