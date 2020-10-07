@@ -10,14 +10,12 @@
 	<script src="https://libs.baidu.com:443/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript">
 		 function b()
-		 { $.ajax({
+		 { var callback=eval($.ajax({
    		 url: "http://tinywebdb.appinventor.space:80/api?user=yueyang&secret=945d027a&action=get&tag="+document.getElementById("user-lookfor").value,
   		 type: 'post',
    		 dataType: 'jsonp',  // 请求方式为jsonp
    		 crossDomain: true,
-	 	success: function(data) {alert(data);}
-});
-		  $.post("http://tinywebdb.appinventor.space:80/api?user=yueyang&secret=945d027a&action=get&tag="+document.getElementById("user-lookfor").value)
+})).statusText;
 }
     </script>
 </head>
