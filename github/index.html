@@ -1,42 +1,22 @@
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-function getQueryString(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = top.window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]); return null;
-    }
-function a()
-	{
-	location="https://github.com:443/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&callback=666&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code	
-	}
-/* function load(name) {
-		    let xhr = new XMLHttpRequest(),
-		        okStatus = document.location.protocol === "file:" ? 0 : 200;
-		    xhr.open('GET', name, false);
-		    xhr.overrideMimeType("text/html;charset=utf-8");//默认为utf-8
-			try{
-				xhr.send(null);
-			}catch(err){
-				alert(err);
-				return null;
-			}
-		finally{
-		return xhr.status === okStatus ? xhr.responseText : null;}
-}
- 
-var a=load("https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code+"&redirect_uri=http://p-y-y.ml/github/c.html")*/
-/*var script = document.createElement('script');
-    script.type = 'text/javascript';
-
-    // 传参并指定回调执行函数为onBack
-    script.src = "https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&callback=onBack&code="+code+"&redirect_uri=http://p-y-y.ml/github/c.html";
-    document.head.appendChild(script);
-    // 回调执行函数
-    function onBack(res) {
-        alert(JSON.stringify(res));
-    }*/var code=getQueryString("code")
-    var boxObj = document.getElementById('d');
-var ulObj = document.createElement("iframe");
-ulObj.src="https://github.com:443/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&callback=?&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&code="+code;
+    callAPIByJSONP("https://github.com/login/oauth/access_token?client_id=d5c916a5a88d5b4f1108&client_secret=f114a9b6200cd0f4bac1df8630a08b3463a85f3d&callback=onBack&code="+code+"&redirect_uri=http://p-y-y.ml/github/c.html")
+function callAPIByJSONP(var urld) {
+            var test = 1;
+            $.ajax({
+                type: "GET",
+                async: false,
+                url: urld,
+                dataType: "jsonp",
+                jsonp: "callback",
+                jsonpCallback:"handler",
+                success: function (result) {
+                    return result;
+                },
+                error: function (e) {
+                    return e;
+                }
+            });
+        }
 </script>
 <div id="d"></div>
